@@ -33,14 +33,20 @@ function App() {
             selectedGenre={selectedGenre}
             onSelectGenre={(genre) => setSelectedGenre(genre)}
           />
-          // onSelectGenre c est la props qui contient la fonction de useState =
+          {/*onSelectGenre c est la props qui contient la fonction de useState =
           setSelectedGenre donc quand on click sur un button ndiro
-          setSelectedGenre
+          setSelectedGenre*/}
         </GridItem>
       </Show>
       <GridItem area="main">
-        <PlatformSelector />
-        <GameGrid selectedGenre={selectedGenre} />
+        <PlatformSelector
+          selectedPlatform={selectedPlatform}
+          onSelectPlatform={(platform) => setSelectedPlatform(platform)}
+        />
+        <GameGrid
+          selectedGenre={selectedGenre}
+          selectedPlatform={selectedPlatform}
+        />
       </GridItem>
     </Grid>
   );
